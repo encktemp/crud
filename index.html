@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1">
+        <title>Cloud GYM</title>
+        <link rel="icon" href="logo-url.png" type="image/png">
+        <link rel="shortcut icon" href="img/icon/icon-url.png" type="img/x-icon">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
+
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+        <link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+        <link href="css/responsive.css" rel="stylesheet" type="text/css">
+        <link href="css/animate.css" rel="stylesheet" type="text/css">
+        <link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+        <link href="css/owl.carousel.css" rel="stylesheet" media="screen" />
+        <!--[if IE]><style type="text/css">.pie {behavior:url(PIE.htc);}</style><![endif]-->
+
+        <script type="text/javascript" src="js/jquery.1.8.3.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/jquery-scrolltofixed.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js/jquery.isotope.js"></script>
+        <script type="text/javascript" src="js/wow.js"></script>
+        <script type="text/javascript" src="js/classie.js"></script>
+        <script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+        <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+
+
+        <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+        <link href="nivo-lightbox.css" rel="stylesheet" type="text/css">
+        <link href="themes/default/default.css" rel="stylesheet" type="text/css">
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+        <script src="nivo-lightbox.js"></script>
+
+        <!-- Código Google Analytics -->
+        <meta name="google-site-verification" content="Q50DQ8bWRa9lM_CTYMWSu8TpV4CofXHERMJiJHDaZ7s" />
+        <!-- Código Google Analytics -->
+
+
+        <script>
+            $(document).ready(function () {
+                $('a').nivoLightbox();
+            });
+        </script>
+
+    </head>
+    <body>
+
+        <header class="header" id="header"><!--header-start-->
+            <div class="container">
+                <figure class="logo animated fadeInDown delay-07s">
+                    <a><img  src="img/logo/logo.png" alt=""></a>	
+                </figure>	
+                <h1 class="animated fadeInDown delay-07s">Cloud GYM</h1>
+                <ul class="we-create animated fadeInUp delay-1s">
+                    <li><h3>NOSSO TRABALHO É MELHOR O SEU</h3></li>
+                </ul>
+                <button type="button" class="btn btn-primary animated fadeInUp delay-3s" data-toggle="modal" data-target="#exampleModal1" data-whatever="@mdo">CADASTRAR FUNCIONÁRIOS</button>
+                <ul class="we-create animated fadeInUp delay-1s">
+                    <li><h2></h2></li>
+                </ul>
+            </div>
+        </header><!--header-end-->
+
+        <nav class="main-nav-outer" id="test"><!--main-nav-start-->
+
+        </nav><!--main-nav-end-->
+
+
+
+        <script type="text/javascript">
+            $(document).ready(function (e) {
+                $('#test').scrollToFixed();
+                $('.res-nav_click').click(function () {
+                    $('.main-nav').slideToggle();
+                    return false
+
+                });
+
+            });
+        </script>
+
+        <script>
+            wow = new WOW(
+                    {
+                        animateClass: 'animated',
+                        offset: 100
+                    }
+            );
+            wow.init();
+        </script>
+
+
+        <script type="text/javascript">
+            $(window).load(function () {
+
+                $('.main-nav li a').bind('click', function (event) {
+                    var $anchor = $(this);
+
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top - 102
+                    }, 1500, 'easeInOutExpo');
+                    /*
+                     if you don't want to use the easing effects:
+                     $('html, body').stop().animate({
+                     scrollTop: $($anchor.attr('href')).offset().top
+                     }, 1000);
+                     */
+                    event.preventDefault();
+                });
+            })
+        </script>
+
+        <script type="text/javascript">
+
+            $(window).load(function () {
+
+
+                var $container = $('.portfolioContainer'),
+                        $body = $('body'),
+                        colW = 375,
+                        columns = null;
+
+
+                $container.isotope({
+                    // disable window resizing
+                    resizable: true,
+                    masonry: {
+                        columnWidth: colW
+                    }
+                });
+
+                $(window).smartresize(function () {
+                    // check if columns has changed
+                    var currentColumns = Math.floor(($body.width() - 30) / colW);
+                    if (currentColumns !== columns) {
+                        // set new column count
+                        columns = currentColumns;
+                        // apply width to container manually, then trigger relayout
+                        $container.width(columns * colW)
+                                .isotope('reLayout');
+                    }
+
+                }).smartresize(); // trigger resize to set container width
+                $('.portfolioFilter a').click(function () {
+                    $('.portfolioFilter .current').removeClass('current');
+                    $(this).addClass('current');
+
+                    var selector = $(this).attr('data-filter');
+                    $container.isotope({
+                        filter: selector,
+                    });
+                    return false;
+                });
+
+            });
+
+        </script>
+
+
+
+        <!-- Start Modal Cadastro -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+            <div id="exampleModal1" class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">CADASTRO DE FUNCIONÁRIOS</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <h6>Favor informar os seguintes dados pessoais:</h6>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Nome</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Sobrenome</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">CPF</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Data de Nascimento</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="opcao1" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Masculino
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="opcao2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Feminino
+                                </label>
+                            </div>
+                            <br>      
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Estado Civil</label>
+                                <select class="wpcf7-form-control wpcf7-select wpcf7-validates-as-required form-control" name="comochegou" aria-invalid="false" aria-required="true" required><option value="" selected>---</option>
+                                    <option value="Anúncio de Revista">Solteira (o)</option>
+                                    <option value="Contato telefônico da equipe">Casada (o)</option>
+                                    <option value="Anúncio no Rádio">Amasiada (o)</option>
+                                    <option value="Google">Viuva (o)</option>                                    
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+
+                            <br>
+                            <div class="form-group">
+                                <label for="message-text" class="control-label"><strong>ENDEREÇO:</strong></label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Rua</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Nº</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Complemento</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="control-label">Cidade</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+                             <div class="form-group">
+                                <label for="recipient-name" class="control-label">Estado</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fecha</button>
+                        <button type="button" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal Cadastro -->
+
+
+
+    </body>
+</html>
